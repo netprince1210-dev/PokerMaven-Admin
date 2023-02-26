@@ -233,7 +233,7 @@ export const HomeCodeSamples = () => {
           }
         }}
       >
-        <Image src={'/feature-0.png'} width={300} height={300} style={{width: '100%', height: '100%', border: '1px solid black' }}/>
+        <Image src={'/feature-0.png'} width={300} alt={'board'} height={300} style={{width: '100%', height: '100%', border: '1px solid black' }}/>
       </Box>
     </Box>
   );

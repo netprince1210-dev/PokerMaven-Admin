@@ -99,10 +99,10 @@ export const HomeHero = () => {
               }
             }}
           >
-            <Image width={100} height={100} new
+            <Image width={700} height={600} alt={'bg'}
               src={theme.palette.mode === 'dark'
-                ? '/bg2.jpg'
-                : '/bg3.jpg'}
+                ? '/bg2.png'
+                : '/bg3.png'}
               style={{width: '100%', height: '100%'}}
             />
           </Box>
