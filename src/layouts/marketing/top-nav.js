@@ -23,7 +23,7 @@ import { TopNavItem } from './top-nav-item';
 const items = [
   {
     title: 'Account',
-    path: paths.components.index
+    path: ''//paths.components.index
   },
   // {
   //   title: 'Pages',
@@ -31,7 +31,7 @@ const items = [
   // },
   {
     title: 'My wallet',
-    path: paths.docs.welcome
+    path: ''//paths.docs.welcome
   }
 ];
 
