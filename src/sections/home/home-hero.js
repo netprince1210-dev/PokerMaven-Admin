@@ -5,6 +5,10 @@ import { Box, Button, Container, Rating, Stack, SvgIcon, Typography } from '@mui
 import { useTheme } from '@mui/material/styles';
 import { paths } from '../../paths';
 import { HomeCodeSamples } from './home-code-samples';
+import Image from 'next/image';
+
+// import bg2 from '../../../public/bg2.jpg';
+// import bg3 from '../../../public/bg3.jpg';
 
 export const HomeHero = () => {
   const theme = useTheme();
@@ -95,10 +99,11 @@ export const HomeHero = () => {
               }
             }}
           >
-            <img
+            <Image width={100} height={100} new
               src={theme.palette.mode === 'dark'
                 ? '/bg2.jpg'
                 : '/bg3.jpg'}
+              style={{width: '100%', height: '100%'}}
             />
           </Box>
           <Box
