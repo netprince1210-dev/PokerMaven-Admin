@@ -3,7 +3,7 @@ import { tokens } from '../tokens';
 export const en = {
   [tokens.common.languageChanged]: 'Language changed',
   [tokens.nav.academy]: 'Academy',
-  [tokens.nav.account]: 'Account & Chips',
+  [tokens.nav.account]: 'Account',
   [tokens.nav.analytics]: 'Analytics',
   [tokens.nav.auth]: 'Auth',
   [tokens.nav.blog]: 'Blog',
@@ -15,7 +15,7 @@ export const en = {
   [tokens.nav.contact]: 'Contact',
   [tokens.nav.course]: 'Course',
   [tokens.nav.create]: 'Create',
-  [tokens.nav.crypto]: 'Crypto Wallet',
+  [tokens.nav.crypto]: 'Wallet',
   [tokens.nav.customers]: 'Deposit & Withdraw',
   [tokens.nav.dashboard]: 'Dashboard',
   [tokens.nav.details]: 'Withdraw',

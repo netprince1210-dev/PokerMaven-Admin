@@ -2,6 +2,7 @@ import { createContext, useCallback, useEffect, useReducer } from 'react';
 import PropTypes from 'prop-types';
 import { authApi } from '../../api/auth';
 import { Issuer } from '../../utils/auth';
+import { save, get, format } from '../../utils/storage';
 
 const STORAGE_KEY = 'accessToken';
 
@@ -73,10 +74,10 @@ export const AuthProvider = (props) => {
 
   const initialize = useCallback(async () => {
     try {
-      const accessToken = globalThis.localStorage.getItem(STORAGE_KEY);
+      const token = get("token");
 
-      if (accessToken) {
-        const user = await authApi.me({ accessToken });
+      if (token) {
+        const user = get("user");
 
         dispatch({
           type: ActionType.INITIALIZE,
@@ -107,21 +108,20 @@ export const AuthProvider = (props) => {
   }, [dispatch]);
 
   useEffect(() => {
-      initialize();
-    },
+    initialize();
+  },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []);
 
-  const signIn = useCallback(async (email, password) => {
-    const { accessToken } = await authApi.signIn({ email, password });
-    const user = await authApi.me({ accessToken });
-
-    localStorage.setItem(STORAGE_KEY, accessToken);
-
+  const signIn = useCallback(async (name, password) => {
+    const { accessToken, name: username, role } = await authApi.signIn({ name, password });
+    save("token", accessToken);
+    save("user", { name: username, role });
     dispatch({
       type: ActionType.SIGN_IN,
       payload: {
-        user
+        name,
+        role
       }
     });
   }, [dispatch]);
@@ -141,7 +141,7 @@ export const AuthProvider = (props) => {
   }, [dispatch]);
 
   const signOut = useCallback(async () => {
-    localStorage.removeItem(STORAGE_KEY);
+    format();
     dispatch({ type: ActionType.SIGN_OUT });
   }, [dispatch]);
 

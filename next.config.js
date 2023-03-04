@@ -5,7 +5,7 @@ const config = {
   experimental: {
     appDir: false
   },
-  basePath: '/poker_admin',
+  // basePath: '/poker_admin',
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
