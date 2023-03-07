@@ -31,4 +31,5 @@ export const mapboxConfig = {
 
 export const apiConfig = {
   base_url: 'http://localhost:8081/api/v1/', // dev
+  base_rul: 'http://poker.tiltedstacks.com/api/v1/' // product
 }
